@@ -30,13 +30,13 @@ android {
         buildConfigField(
             "String",
             "BASE_URL",
-            "\"${localProperties.getProperty("nba.base.url", "https://api.balldontlie.io/")}\""
+            "\"${localProperties.getProperty("news.base.url", "https://newsapi.org/")}\""
         )
 
         buildConfigField(
             "String",
             "API_KEY",
-            "\"${localProperties.getProperty("nba.api.key", "")}\""
+            "\"${localProperties.getProperty("news.api.key", "")}\""
         )
     }
 
