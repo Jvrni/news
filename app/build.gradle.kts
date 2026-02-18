@@ -30,11 +30,28 @@ android {
             )
         }
     }
+
+    flavorDimensions += "source"
+
+    productFlavors {
+        create("bbc") {
+            dimension = "source"
+            applicationIdSuffix = ".bbc"
+            buildConfigField("String", "NEWS_SOURCE", "\"bbc-news\"")
+        }
+        create("cnn") {
+            dimension = "source"
+            applicationIdSuffix = ".cnn"
+            buildConfigField("String", "NEWS_SOURCE", "\"cnn\"")
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
     buildFeatures {
+        buildConfig = true
         compose = true
     }
 }

@@ -1,7 +1,7 @@
 package com.jvrni.core.network.di
 
 import com.jvrni.core.network.BuildConfig
-import com.jvrni.core.network.api.ApiService
+import com.jvrni.core.network.api.NewsApiService
 import com.jvrni.core.network.interceptor.AuthInterceptor
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -80,7 +80,7 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideApiService(retrofit: Retrofit): ApiService {
-        return retrofit.create(ApiService::class.java)
+    fun provideApiService(retrofit: Retrofit): NewsApiService {
+        return retrofit.create(NewsApiService::class.java)
     }
 }
