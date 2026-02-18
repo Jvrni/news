@@ -37,9 +37,9 @@ android {
 }
 
 dependencies {
-    implementation(project(":domain"))
-    implementation(project(":core:ui"))
-    implementation(project(":core:navigation"))
+    implementation(projects.domain)
+    implementation(projects.core.ui)
+    implementation(projects.core.navigation)
 
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation.compose)

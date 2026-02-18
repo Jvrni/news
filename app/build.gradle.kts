@@ -40,13 +40,13 @@ android {
 }
 
 dependencies {
-    implementation(project(":feature:headlines"))
-    implementation(project(":domain"))
-    implementation(project(":data"))
-    implementation(project(":core:ui"))
-    implementation(project(":core:common"))
-    implementation(project(":core:network"))
-    implementation(project(":core:navigation"))
+    implementation(projects.feature.headlines)
+    implementation(projects.domain)
+    implementation(projects.data)
+    implementation(projects.core.ui)
+    implementation(projects.core.common)
+    implementation(projects.core.network)
+    implementation(projects.core.navigation)
 
 
     implementation(libs.androidx.appcompat)

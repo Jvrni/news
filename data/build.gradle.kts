@@ -33,8 +33,8 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:network"))
-    implementation(project(":domain"))
+    implementation(projects.core.network)
+    implementation(projects.domain)
 
     implementation(libs.bundles.coroutines)
 

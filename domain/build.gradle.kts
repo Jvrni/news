@@ -33,6 +33,8 @@ android {
 }
 
 dependencies {
+    implementation(projects.core.common)
+
     implementation(libs.bundles.coroutines)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
