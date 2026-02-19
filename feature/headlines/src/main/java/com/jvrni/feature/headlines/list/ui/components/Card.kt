@@ -32,7 +32,13 @@ import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.jvrni.core.ui.R
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.SharedTransitionLayout
+import androidx.compose.animation.core.spring
+import androidx.compose.ui.tooling.preview.Preview
+import com.jvrni.core.ui.theme.NewsAppTheme
 import com.jvrni.domain.models.Headline
+import com.jvrni.domain.models.Source
 
 @OptIn(ExperimentalSharedTransitionApi::class)
 @Composable
@@ -117,6 +123,34 @@ fun Card(
                         color = Color.Black.copy(alpha = 0.8f),
                     )
                 }
+            }
+        }
+    }
+}
+
+@OptIn(ExperimentalSharedTransitionApi::class)
+@Preview(showBackground = true)
+@Composable
+private fun PreviewHeadlineCard() {
+    NewsAppTheme {
+        SharedTransitionLayout {
+            AnimatedVisibility(visible = true) {
+                Card(
+                    article = Headline(
+                        source = Source(id = "bbc-news", name = "BBC News", category = null),
+                        author = "John Doe",
+                        title = "Breaking: Major event unfolds in downtown area this weekend",
+                        description = "Details emerging about a significant development.",
+                        url = "https://example.com/1",
+                        urlToImage = "",
+                        publishedAt = "19 Feb, 10:30 AM",
+                        content = ""
+                    ),
+                    sharedTransitionScope = this@SharedTransitionLayout,
+                    animatedVisibilityScope = this@AnimatedVisibility,
+                    boundsTransform = { _, _ -> spring() },
+                    onClick = {}
+                )
             }
         }
     }

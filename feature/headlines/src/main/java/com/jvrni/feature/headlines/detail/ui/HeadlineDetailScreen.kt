@@ -38,7 +38,12 @@ import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.jvrni.core.navigation.HeadlineRoute
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.SharedTransitionLayout
+import androidx.compose.animation.core.spring
+import androidx.compose.ui.tooling.preview.Preview
 import com.jvrni.core.ui.R
+import com.jvrni.core.ui.theme.NewsAppTheme
 
 @OptIn(ExperimentalSharedTransitionApi::class)
 @Composable
@@ -168,6 +173,34 @@ fun HeadlineDetailScreen(
                         tint = Color.White
                     )
                 }
+            }
+        }
+    }
+}
+
+@OptIn(ExperimentalSharedTransitionApi::class)
+@Preview(showSystemUi = true)
+@Composable
+private fun PreviewHeadlineDetailScreen() {
+    NewsAppTheme {
+        SharedTransitionLayout {
+            AnimatedVisibility(visible = true) {
+                HeadlineDetailScreen(
+                    route = HeadlineRoute.DetailsRoute(
+                        author = "Jane Smith",
+                        title = "Global markets surge as tech stocks hit record highs worldwide",
+                        description = "Stock markets around the world saw significant gains on Thursday, led by a rally in technology stocks that pushed major indices to new all-time highs.",
+                        url = "https://example.com/1",
+                        urlToImage = "",
+                        publishedAt = "19 Feb, 09:00 AM",
+                        content = "The surge was driven by strong earnings reports from several major technology companies, along with positive economic data suggesting continued growth in the sector. Analysts say the rally could continue into next week if macroeconomic conditions remain stable."
+                    ),
+                    sharedTransitionScope = this@SharedTransitionLayout,
+                    animatedVisibilityScope = this@AnimatedVisibility,
+                    paddingValues = PaddingValues(),
+                    boundsTransform = { _, _ -> spring() },
+                    onBack = {}
+                )
             }
         }
     }
