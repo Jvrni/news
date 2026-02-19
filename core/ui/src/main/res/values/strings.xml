@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="empty_results_title">No news found</string>
+    <string name="empty_results_subtitle">Try searching with different keywords.</string>
+    <string name="error_title">Something went wrong</string>
+    <string name="error_subtitle">We couldn\'t load the news. Check your connection and try again.</string>
+    <string name="error_action">Try again</string>
+
+    <string name="biometric_title">Verify identity</string>
+    <string name="biometric_subtitle">Use your fingerprint to access the app</string>
+    <string name="biometric_negative_button">Cancel</string>
+</resources>

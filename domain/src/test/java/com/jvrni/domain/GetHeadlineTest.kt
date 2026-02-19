@@ -4,7 +4,7 @@ import com.jvrni.core.common.result.AppResult
 import com.jvrni.core.common.result.getOrNull
 import com.jvrni.domain.models.Headline
 import com.jvrni.domain.repository.HeadlineRepository
-import com.jvrni.domain.usecase.GetHeadline
+import com.jvrni.domain.usecase.GetHeadlines
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
@@ -17,12 +17,12 @@ import org.junit.Test
 class GetHeadlineTest {
     
     private lateinit var repository: HeadlineRepository
-    private lateinit var useCase: GetHeadline
+    private lateinit var useCase: GetHeadlines
     
     @Before
     fun setup() {
         repository = mockk()
-        useCase = GetHeadline(repository)
+        useCase = GetHeadlines(repository)
     }
     
     @Test

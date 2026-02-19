@@ -6,6 +6,7 @@ import com.jvrni.domain.models.Source
 fun SourceDto.toDomain(): Source {
     return Source(
         id = id,
-        name = name
+        name = name,
+        category = category
     )
 }

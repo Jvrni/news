@@ -3,7 +3,6 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
-    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -44,6 +43,7 @@ dependencies {
     api(platform(libs.androidx.compose.bom))
     api(libs.bundles.compose)
     api(libs.navigation.ui)
+    api(libs.coil)
 
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.hilt.android)
@@ -51,10 +51,8 @@ dependencies {
     ksp(libs.hilt.compiler)
 
     implementation(libs.bundles.coroutines)
-    implementation(libs.androidx.paging.compose)
+    implementation(libs.androidx.biometric)
 
-    testImplementation(libs.pagingCommon)
-    testImplementation(libs.pagingTesting)
     testImplementation(libs.junit)
     testImplementation(libs.mockk)
     testImplementation(libs.coroutines.test)

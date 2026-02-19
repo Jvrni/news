@@ -1,3 +1,5 @@
+package com.jvrni.news.di
+
 import com.jvrni.news.BuildConfig
 import dagger.Module
 import dagger.Provides
@@ -13,4 +15,13 @@ object FlavorModule {
     @Singleton
     @Named("NewsSource")
     fun provideNewsSource(): String = BuildConfig.NEWS_SOURCE
+
+    @Provides
+    @Singleton
+    @Named("AppName")
+    fun provideAppName(): String = when (BuildConfig.NEWS_SOURCE) {
+        "bbc-news" -> "BBC"
+        "cnn" -> "CNN"
+        else -> "News"
+    }
 }
