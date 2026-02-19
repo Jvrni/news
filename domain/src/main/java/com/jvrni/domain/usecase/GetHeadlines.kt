@@ -5,7 +5,7 @@ import com.jvrni.domain.models.Headline
 import com.jvrni.domain.repository.HeadlineRepository
 import javax.inject.Inject
 
-class GetHeadline @Inject constructor(
+class GetHeadlines @Inject constructor(
     private val repository: HeadlineRepository
 ) {
     suspend operator fun invoke(): AppResult<List<Headline>> {

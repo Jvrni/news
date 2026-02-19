@@ -1,5 +1,6 @@
 package com.jvrni.data.mapper
 
+import com.jvrni.core.common.extensions.formatPublishedAt
 import com.jvrni.core.network.dto.HeadlineDto
 import com.jvrni.core.network.dto.HeadlineResponseDto
 import com.jvrni.domain.models.Headline
@@ -7,13 +8,13 @@ import com.jvrni.domain.models.Headline
 fun HeadlineDto.toDomain(): Headline {
     return Headline(
         source = source.toDomain(),
-        author = author,
+        author = author ?: "",
         title = title,
-        description = description,
+        description = description ?: "",
         url = url,
-        urlToImage = urlToImage,
-        publishedAt = publishedAt,
-        content = content
+        urlToImage = urlToImage ?: "",
+        publishedAt = publishedAt.formatPublishedAt(),
+        content = content ?: ""
     )
 }
 

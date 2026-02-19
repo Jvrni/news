@@ -21,25 +21,25 @@ data class HeadlineDto(
     val source: SourceDto,
 
     @field:Json(name = "author")
-    val author: String,
+    val author: String?,
 
     @field:Json(name = "title")
     val title: String,
 
     @field:Json(name = "description")
-    val description: String,
+    val description: String?,
 
     @field:Json(name = "url")
     val url: String,
 
     @field:Json(name = "urlToImage")
-    val urlToImage: String,
+    val urlToImage: String?,
 
     @field:Json(name = "publishedAt")
     val publishedAt: String,
 
     @field:Json(name = "content")
-    val content: String
+    val content: String?
 )
 
 @JsonClass(generateAdapter = true)
@@ -50,5 +50,8 @@ data class SourceDto(
 
     @field:Json(name = "name")
     val name: String,
+
+    @field:Json(name = "category")
+    val category: String?,
 
 )

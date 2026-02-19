@@ -39,10 +39,6 @@ dependencies {
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
 
-    implementation(libs.androidx.paging.runtime)
-
-    testImplementation(libs.pagingCommon)
-    testImplementation(libs.pagingTesting)
     testImplementation(libs.junit)
     testImplementation(libs.mockk)
     testImplementation(libs.coroutines.test)
