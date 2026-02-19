@@ -2,4 +2,9 @@
 <resources>
 
     <style name="Theme.News" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.News.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/primary</item>
+        <item name="postSplashScreenTheme">@style/Theme.News</item>
+    </style>
 </resources>
